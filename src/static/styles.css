@@ -57,6 +57,33 @@ section h3 {
   color: #1a237e;
 }
 
+#auth-status {
+  margin-top: 12px;
+}
+
+#account-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+#user-create-form {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed #ccc;
+}
+
+#user-create-form h4 {
+  margin-bottom: 12px;
+  color: #1a237e;
+}
+
+#target-email-group.hidden,
+#account-details.hidden {
+  display: none;
+}
+
 .activity-card {
   margin-bottom: 15px;
   padding: 15px;
