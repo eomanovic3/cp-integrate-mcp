@@ -13,6 +13,46 @@
     </header>
 
     <main>
+      <section id="auth-container">
+        <h3>Account</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="login-email">Email:</label>
+            <input type="email" id="login-email" autocomplete="username" required />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password:</label>
+            <input type="password" id="login-password" autocomplete="current-password" required />
+          </div>
+          <button type="submit">Log In</button>
+        </form>
+        <div id="account-details" class="hidden">
+          <p id="account-identity"></p>
+          <button id="logout-button" type="button">Log Out</button>
+        </div>
+        <p id="auth-status" role="status" aria-live="polite"></p>
+        <form id="user-create-form" class="hidden">
+          <h4>Create Account</h4>
+          <div class="form-group">
+            <label for="new-user-email">Email:</label>
+            <input type="email" id="new-user-email" autocomplete="off" required />
+          </div>
+          <div class="form-group">
+            <label for="new-user-password">Temporary password:</label>
+            <input type="password" id="new-user-password" minlength="12" maxlength="128" autocomplete="new-password" required />
+          </div>
+          <div class="form-group">
+            <label for="new-user-role">Role:</label>
+            <select id="new-user-role" required>
+              <option value="student">Student</option>
+              <option value="teacher">Teacher</option>
+              <option value="club_advisor">Club advisor</option>
+            </select>
+          </div>
+          <button type="submit">Create Account</button>
+        </form>
+      </section>
+
       <section id="activities-container">
         <h3>Available Activities</h3>
         <div id="activities-list">
@@ -23,16 +63,16 @@
 
       <section id="signup-container">
         <h3>Sign Up for an Activity</h3>
-        <form id="signup-form">
-          <div class="form-group">
-            <label for="email">Student Email:</label>
-            <input type="email" id="email" required placeholder="your-email@mergington.edu" />
+        <p id="login-required">Log in with your school account to manage signups.</p>
+        <form id="signup-form" class="hidden">
+          <div class="form-group hidden" id="target-email-group">
+            <label for="target-email">Student Email:</label>
+            <input type="email" id="target-email" />
           </div>
           <div class="form-group">
             <label for="activity">Select Activity:</label>
             <select id="activity" required>
               <option value="">-- Select an activity --</option>
-              <!-- Activity options will be loaded here -->
             </select>
           </div>
           <button type="submit">Sign Up</button>
